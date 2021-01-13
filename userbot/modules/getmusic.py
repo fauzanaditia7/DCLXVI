@@ -274,7 +274,7 @@ async def _(event):
         await event.edit("`Enter a valid link to download from`")
     else:
         await event.edit("`Processing...`")
-    chat = "@MusicHuntersBot"
+    chat = "@MusicsHunterBot"
     try:
         async with bot.conversation(chat) as conv:
             try:
@@ -285,7 +285,7 @@ async def _(event):
                 song = await conv.get_response()
                 await bot.send_read_acknowledge(conv.chat_id)
             except YouBlockedUserError:
-                await event.edit("`Unblock `@MusicHuntersBot` and retry`")
+                await event.edit("`Unblock `@MusicsHunterBot` and retry`")
                 return
             await bot.send_file(event.chat_id, song, caption=details.text)
             await event.client.delete_messages(
@@ -294,7 +294,7 @@ async def _(event):
             await event.delete()
     except TimeoutError:
         return await event.edit(
-            "`Error: `@MusicHuntersBot` is not responding or Song not found!.`"
+            "`Error: `@MusicsHunterBot` is not responding or Song not found!.`"
         )
 
 
