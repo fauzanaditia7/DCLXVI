@@ -68,5 +68,5 @@ urbandict
 validators
 wget
 wikipedia
-youtube-dl
+youtube_dl
 youtube_search
